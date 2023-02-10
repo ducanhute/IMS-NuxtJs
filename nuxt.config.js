@@ -32,6 +32,7 @@ export default {
         '~/assets/css/flaticon.css',
         '~/assets/css/font-awesome.css',
         '~/assets/css/custom.scss',
+        '~/assets/css/animate.css',
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

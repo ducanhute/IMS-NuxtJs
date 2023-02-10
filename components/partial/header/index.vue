@@ -1,47 +1,48 @@
 <template lang="html">
-    <div class="fixed-top">
-        <header class="main-header">
-            <!-- Header Top -->
+    <header class="main-header" :class="{ 'fixed-header': active }">
+        <!-- Header Top -->
 
-            <!-- Header Top End -->
+        <!-- Header Top End -->
 
-            <!-- Main Box -->
-            <div class="main-box" style="background-color: #333">
-                <div class="auto-container">
-                    <div class="outer-container clearfix">
-                        <!--Logo Box-->
-                        <div class="logo-box">
-                            <a href="home"
-                                ><img
-                                    src="~/assets/images/logo-header.png"
-                                    alt=""
-                                    width="100px"
-                            /></a>
-                        </div>
+        <!-- Main Box -->
+        <div class="main-box">
+            <div class="auto-container">
+                <div class="outer-container clearfix">
+                    <!--Logo Box-->
+                    <div class="logo-box">
+                        <nuxt-link to="/home"
+                            ><img
+                                src="~/assets/images/logo-header.png"
+                                alt=""
+                                width="100px"
+                        /></nuxt-link>
+                    </div>
 
-                        <!--Nav Outer-->
-                        <div class="nav-outer clearfix">
-                            <!-- Main Menu -->
-                            <nav class="main-menu">
-                                <div class="navbar-header">
-                                    <!-- Toggle Button -->
-                                    <button
-                                        type="button"
-                                        class="navbar-toggle"
-                                        data-toggle="collapse"
-                                        data-target=".navbar-collapse"
-                                    >
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
+                    <!--Nav Outer-->
+                    <div class="nav-outer clearfix">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->
+                                <button
+                                    type="button"
+                                    class="navbar-toggle"
+                                    data-toggle="collapse"
+                                    data-target=".navbar-collapse"
+                                >
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
 
-                                <div class="navbar-collapse collapse clearfix">
-                                    <ul class="navigation clearfix">
-                                        <li class="current dropdown">
-                                            <a href="home">Trang chủ</a>
-                                            <!-- <ul>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current dropdown">
+                                        <nuxt-link to="/home">
+                                            Trang chủ</nuxt-link
+                                        >
+                                        <!-- <ul>
                                             <li><a href="index.html">Homepage 1</a></li>
                                             <li><a href="index-2.html">Homepage 2</a></li>
                                             <li><a href="index-3.html">Homepage 3</a></li>
@@ -53,10 +54,12 @@
                                                 </ul>
                                             </li>
                                         </ul> -->
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#introduce">Giới thiệu</a>
-                                            <!-- <ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a @click="SwitchToHome('introduce')"
+                                            >Giới thiệu</a
+                                        >
+                                        <!-- <ul>
                                                 <li>
                                                     <a href="about.html"
                                                         >About Our Company</a
@@ -82,10 +85,13 @@
                                                     >
                                                 </li>
                                             </ul> -->
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Dịch vụ</a>
-                                            <!-- <ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <nuxt-link to="/home"
+                                            >Dịch vụ</nuxt-link
+                                        >
+
+                                        <!-- <ul>
                                                 <li>
                                                     <a href="services.html"
                                                         >View All Services</a
@@ -122,17 +128,19 @@
                                                     >
                                                 </li>
                                             </ul> -->
-                                        </li>
-                                        <li class="">
-                                            <a href="#contact">Liên hệ</a>
-                                            <!-- <ul>
+                                    </li>
+                                    <li class="">
+                                        <a @click="ScrollToiChet('contact')"
+                                            >Liên hệ</a
+                                        >
+                                        <!-- <ul>
                                             <li><a href="case-1.html">Case Studies Style 01</a></li>
                                             <li><a href="case-2.html">Case Studies Style 02</a></li>
                                             <li><a href="case-3.html">Case Studies Style 03</a></li>
                                             <li><a href="case-single.html">Single Case Studies</a></li>
                                         </ul> -->
-                                        </li>
-                                        <!-- <li class="">
+                                    </li>
+                                    <!-- <li class="">
                                             <a href="blog-1.html">Blog</a>
                                             <ul>
                                             <li><a href="blog-1.html">Blog Small Image</a></li>
@@ -141,7 +149,7 @@
                                             <li><a href="blog-single.html">Single Post</a></li>
                                         </ul>
                                         </li> -->
-                                        <!-- <li class="dropdown">
+                                    <!-- <li class="dropdown">
                                             <a href="#">Shop</a>
                                             <ul>
                                                 <li>
@@ -167,16 +175,16 @@
                                                 </li>
                                             </ul>
                                         </li> -->
-                                        <!-- <li>
+                                    <!-- <li>
                                             <a href="contact.html">Contact us</a>
                                         </li> -->
-                                    </ul>
-                                </div>
-                            </nav>
-                            <!-- Main Menu End-->
-                            <div class="outer-box">
-                                <!--Cart Box-->
-                                <!-- <div class="cart-btn">
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- Main Menu End-->
+                        <div class="outer-box">
+                            <!--Cart Box-->
+                            <!-- <div class="cart-btn">
                                     <a href="shop-single.html"
                                         ><span
                                             class="icon flaticon-shopping-cart"
@@ -184,36 +192,33 @@
                                     ></a>
                                 </div> -->
 
-                                <!--Search Box-->
-                                <div class="search-form">
-                                    <form method="post" action="contact.html">
-                                        <div class="form-group clearfix">
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value=""
-                                                placeholder="Search"
-                                                required
-                                            />
-                                            <button
-                                                type="submit"
-                                                class="theme-btn subscribe-btn"
-                                            >
-                                                <span
-                                                    class="fa fa-search"
-                                                ></span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                            <!--Search Box-->
+                            <div class="search-form">
+                                <form method="post" action="contact.html">
+                                    <div class="form-group clearfix">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value=""
+                                            placeholder="Search"
+                                            required
+                                        />
+                                        <button
+                                            type="submit"
+                                            class="theme-btn subscribe-btn"
+                                        >
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <!--Nav Outer End-->
                     </div>
+                    <!--Nav Outer End-->
                 </div>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -222,14 +227,46 @@ export default {
     data() {
         return {
             active: false,
+            scrollPos: 0,
         };
+    },
+    // event on vue
+    mounted() {
+        window.addEventListener('scroll', this.scrollTop);
+    },
+    methods: {
+        scrollTop() {
+            this.scrollPos = window.scrollY;
+            if (this.scrollPos > 116) {
+                console.log(this.scrollPos);
+                this.active = true;
+            } else {
+                this.active = false;
+            }
+        },
+        ScrollToiChet(id) {
+            document.getElementById(id).scrollIntoView();
+        },
+        // SwitchToHome and go to specific id
+        SwitchToHome(id) {
+            this.$router.push(`/home`);
+            setTimeout(() => {
+                document.getElementById(id).scrollIntoView();
+            }, 100);
+        },
     },
 };
 </script>
 <style lang="scss">
-.header__container {
-    height: 110px;
-    width: 100%;
-    background: black;
-}
+// .fixed-header {
+//     animation: fadeOut 0.5s linear;
+// }
+// @keyframes fadeOut {
+//     from {
+//         opacity: 0;
+//     }
+//     to {
+//         opacity: 1;
+//     }
+// }
 </style>
