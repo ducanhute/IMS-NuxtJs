@@ -1,5 +1,5 @@
 <template lang="html">
-    <header class="main-header" :class="{ 'fixed-header': active }">
+    <header id="Home" class="main-header" :class="{ 'fixed-header': active }">
         <!-- Header Top -->
 
         <!-- Header Top End -->
@@ -10,12 +10,12 @@
                 <div class="outer-container clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <nuxt-link to="/home"
+                        <a @click="scrollToHome()"
                             ><img
                                 src="~/assets/images/logo-header.png"
                                 alt=""
                                 width="100px"
-                        /></nuxt-link>
+                        /></a>
                     </div>
 
                     <!--Nav Outer-->
@@ -39,9 +39,7 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     <li class="current dropdown">
-                                        <nuxt-link to="/home">
-                                            Trang chủ</nuxt-link
-                                        >
+                                        <a @click="scrollToHome"> Trang chủ</a>
                                         <!-- <ul>
                                             <li><a href="index.html">Homepage 1</a></li>
                                             <li><a href="index-2.html">Homepage 2</a></li>
@@ -87,7 +85,7 @@
                                             </ul> -->
                                     </li>
                                     <li class="dropdown">
-                                        <nuxt-link to="/home"
+                                        <nuxt-link to="/blog-1"
                                             >Dịch vụ</nuxt-link
                                         >
 
@@ -253,6 +251,10 @@ export default {
             setTimeout(() => {
                 document.getElementById(id).scrollIntoView();
             }, 100);
+        },
+        scrollToHome() {
+            this.$router.push(`/home`);
+            window.scrollTo(0, 0);
         },
     },
 };
