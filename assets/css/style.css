@@ -4397,7 +4397,7 @@ img {
     position: absolute;
     content: '';
     left: 0px;
-    top: 50%;
+    top: 100%;
     height: 2px;
     width: 0px;
     transition: all 0.3s ease;
@@ -4409,7 +4409,7 @@ img {
 }
 
 .dream-block .inner-box:hover .total-number:before {
-    width: 100px;
+    width: 200px;
 }
 
 .dream-block .inner-box .total-number .number {
@@ -6155,7 +6155,7 @@ img {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.64);
 }
 
 .page-title.style-two {

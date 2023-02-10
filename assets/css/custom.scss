@@ -1,0 +1,48 @@
+/* About page */
+.reason-block {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #17b6e6;
+    padding: 4px 10px;
+    height: 210px;
+    @media (max-width: 767px) {
+        height: 140px;
+    }
+    .text1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(10px, 5vw, 14px);
+        height: 60px;
+    }
+    .text2 {
+        font-size: clamp(10px, 5vw, 20px);
+        height: 60px;
+    }
+    .hori-line {
+        height: 1px;
+        background-color: black;
+        width: 80%;
+    }
+}
+.inner-box-custom {
+    min-height: 180px;
+    @media (max-width: 991px) {
+        min-height: 260px;
+    }
+    @media (max-width: 575px) {
+        min-height: 180px;
+    }
+}
+.custom-block-reason {
+    min-height: 230px;
+    @media (max-width: 991px) {
+        min-height: 210px;
+    }
+    @media (max-width: 575px) {
+        min-height: 100px;
+    }
+}
+.inner-box-custom:hover .text {
+    opacity: 1 !important;
+}

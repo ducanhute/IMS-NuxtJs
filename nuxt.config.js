@@ -14,20 +14,33 @@ export default {
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            {
+                rel: 'icon',
+                type: 'image/x-icon',
+                href: '~/assets/images/favicon.png',
+            },
+        ],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         '~/assets/scss/main.scss',
-        '@/assets/css/bootstrap.css',
-        '@/assets/css/style.css',
-        '@/assets/css/responsive.css',
-        '@/assets/css/flaticon.css',
+        '~/assets/css/bootstrap.css',
+        '~/assets/css/style.css',
+        '~/assets/css/responsive.css',
+        '~/assets/css/flaticon.css',
+        '~/assets/css/font-awesome.css',
+        '~/assets/css/custom.scss',
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [
+        {
+            src: '~/plugins/vueslickcarousel.js',
+            ssr: true,
+        },
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
